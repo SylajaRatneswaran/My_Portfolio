@@ -473,6 +473,54 @@ ul { list-style: none; }
   background: rgba(45, 106, 90, 0.04);
 }
 
+/* ── Skills ── */
+.skills {
+  background: var(--bg-warm);
+  border-top: 1px solid var(--border);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.skill-item {
+  padding: 1.25rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  position: relative;
+  padding-left: 2.75rem;
+}
+
+.skill-item::before {
+  content: '';
+  position: absolute;
+  left: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.7;
+}
+
+.skill-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  border-color: var(--accent);
+}
+
+.skill-item:hover::before {
+  opacity: 1;
+}
+
 /* ── Experience ── */
 .experience-card {
   background: var(--surface);
@@ -1417,7 +1465,8 @@ ul { list-style: none; }
   .impact-grid,
   .cert-gallery,
   .volunteer-grid,
-  .extra-grid {
+  .extra-grid,
+  .skills-grid {
     grid-template-columns: 1fr;
   }
 
